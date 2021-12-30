@@ -5,6 +5,10 @@ import Form from 'react-bootstrap/Form';
 export const Parent = () => {
   const [name, setName] = useState('');
 
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
+
   return (
     <div className="parent-box">
       <h3>Parent component</h3>
@@ -14,7 +18,7 @@ export const Parent = () => {
           <Form.Control
             type="text"
             placeholder="Enter name"
-            onChange={(e) => setName(e.target.value)}
+            onChange={handleNameChange}
           ></Form.Control>
         </Form.Group>
       </Form>
